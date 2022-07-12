@@ -1,0 +1,299 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.flutter_practice2"
+    tools:ignore="Instantiatable">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.location" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 通过网络得到粗略位置 GPS使用 街區精準-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Android Q新增权限，允许应用在后台发起定位，如应用target为Q，请添加此权限 GPS使用 非常精準-->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <!--如果设置了target >= 28 如果需要启动后台定位则必须声明这个权限-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- 检查网络可用性 -->
+    <!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 访问网络的变化, 需要某些信息用于网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 通过GPS得到精确位置 -->
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <!-- 通过GPS得到精确位置 -->
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true"
+        tools:targetApi="eclair" />
+
+    <queries>
+        <!-- SMS -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="sms" />
+        </intent>
+        <!-- call -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="tel" />
+        </intent>
+        <!-- https -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+        <!-- 自訂分頁 -->
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+        <!-- 開啟PDF -->
+        <!--<intent>
+            <action android:name="android.intent.action.VIEW" />
+             如果事先不知道 MIME 類型，請將“mimeType”設置為“*/*”。
+            <data android:mimeType="application/pdf" />
+        </intent>-->
+        <!-- 文字轉語音 -->
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+        <!-- 語音辨識 -->
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+        <!-- 媒體瀏覽器 -->
+        <intent>
+            <action android:name="android.media.browse.MediaBrowserService" />
+        </intent>
+        <!-- 簡訊應用程式 -->
+        <intent>
+            <action android:name="android.intent.action.SENDTO"/>
+            <data android:scheme="smsto" android:host="*" />
+        </intent>
+        <!-- 建立自訂共用試算表 -->
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="image/jpeg" />
+        </intent>
+        <!-- 顯示自訂文字選取動作 -->
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT" />
+            <data android:mimeType="text/plain" />
+        </intent>
+        <!-- 顯示聯絡人的自訂資料列 -->
+        <intent>
+            <action android:name="android.accounts.AccountAuthenticator" />
+        </intent>
+        <!-- 允許應用加載與自定義 MIME 類型對應的圖標 -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="content" android:host="com.android.contacts"
+                android:mimeType="vnd.android.cursor.item/*" />
+        </intent>
+    </queries>
+
+    <!-- io.flutter.app.FlutterApplication 是一個 android.app.Application
+          調用 FlutterMain.startInitialization(this); 在其 onCreate 方法中。
+          在大多數情況下，您可以保持原樣，但如果您想提供
+          附加功能可以繼承或重新實現
+          FlutterApplication 並將您的自定義類放在這裡。 -->
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:label="flutter_practice2"
+        android:name="androidx.multidex.MultiDexApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="m">
+        <!--android:name="${applicationName}"-->
+        <!--android:name="io.flutter.embedding.android.FlutterPlayStoreSplitApplication"-->
+        <activity
+            android:name="com.ryanheise.audioservice.AudioServiceActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <!-- 指定一個 Android 主題以立即應用到此 Activity
+                   Android進程已啟動。 此主題對用戶可見
+                   當 Flutter UI 初始化時。 之後，這個主題繼續
+                   確定 Flutter UI 背後的 Window 背景。 -->
+            <meta-data
+                android:name="io.flutter.embedding.android.NormalTheme"
+                android:resource="@style/NormalTheme"
+                />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <!-- 設置警報 -->
+                <action android:name="android.intent.action.SET_ALARM" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 設置計時器 -->
+                <action android:name="android.intent.action.SET_TIMER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 顯示所有警報 -->
+                <action android:name="android.intent.action.SHOW_ALARMS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 日曆
+                <action android:name="android.intent.action.INSERT" />
+                <data android:type="vnd.android.cursor.dir/event" />
+                <category android:name="android.intent.category.DEFAULT" /> -->
+                <!-- 相機 -->
+                <action android:name="android.media.action.IMAGE_CAPTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 意圖過濾器 -->
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 在影片模式下啟動相機 -->
+                <action android:name="android.media.action.VIDEO_CAMERA" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 聯絡人/人員 -->
+                <action android:name="android.intent.action.SHOW_ALARMS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 意圖過濾器
+                <action android:name="android.intent.action.SEND" />
+                <data android:tpe="*/*" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.SENDTO" />
+                <data android:scheme="mailto" />
+                <category android:name="android.intent.category.DEFAULT" /> -->
+                <!-- 檔案儲存 OPENABLE 類別聲明返回的文件是可訪問的
+                           來自支持 OpenableColumns 的內容提供商
+                           和 ContentResolver.openFileDescriptor()
+                <action android:name="android.intent.action.GET_CONTENT" />
+                <data android:type="image/*" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" /> -->
+                <!-- 地方行動 -->
+                <action android:name="com.google.android.gms.actions.RESERVE_TAXI_RESERVATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 音樂或影片
+                <action android:name="android.intent.action.VIEW" />
+                <data android:type="audio/*" />
+                <data android:type="application/ogg" />
+                <category android:name="android.intent.category.DEFAULT" /> -->
+                <!-- 根據搜尋查詢播放音樂 -->
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 新說明
+                <action android:name="com.google.android.gms.actions.CREATE_NOTE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:type="*/*" /> -->
+                <!-- 电话 -->
+                <action android:name="com.google.android.gms.actions.SEARCH_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <!-- 搜尋 -->
+                <action android:name="com.google.android.gms.actions.SEARCH_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <!-- 執行網路搜尋
+                <action android:name="android.intent.action.SEND" />
+                <data android:type="text/plain" />
+                <data android:type="image/*" />
+                <category android:name="android.intent.category.DEFAULT" /> -->
+                <!-- 簡訊
+                <action android:name="android.intent.action.SEND" />
+                <data android:type="text/plain" />
+                <data android:type="image/*" />
+                <category android:name="android.intent.category.DEFAULT" /> -->
+                <!-- 網頁瀏覽器 如果您希望您的應用響應，請包含主機屬性僅適用於您的應用程序域的 URL App桌面會被隱藏-->
+                <!--<action android:name="android.intent.action.VIEW" />
+                <data android:scheme="http" android:host="www.example.com" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE"/>-->
+                <!-- 需要 BROWSABLE 類別才能從網頁獲取鏈接。-->
+            </intent-filter>
+        </activity>
+
+        <!-- 添加此“服務”元素 -->
+        <service android:name="com.ryanheise.audioservice.AudioService"
+            android:foregroundServiceType="mediaPlayback"
+            android:exported="false" tools:ignore="Instantiatable"
+            android:permission="TODO">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+
+        <!-- 添加此“接收器”元素 -->
+        <receiver android:name="com.ryanheise.audioservice.MediaButtonReceiver"
+            android:exported="true" tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="vn.hunghd.flutterdownloader.DownloadedFileProvider"
+            android:authorities="${applicationId}.flutter_downloader.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <!-- Begin FlutterDownloader customization -->
+        <!-- disable default Initializer -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
+
+        <!-- declare customized Initializer -->
+        <provider
+            android:name="vn.hunghd.flutterdownloader.FlutterDownloaderInitializer"
+            android:authorities="${applicationId}.flutter-downloader-init"
+            android:exported="false">
+            <!-- changes this number to configure the maximum number of concurrent tasks -->
+            <meta-data
+                android:name="vn.hunghd.flutterdownloader.MAX_CONCURRENT_TASKS"
+                android:value="5" />
+        </provider>
+        <!-- End FlutterDownloader customization -->
+
+        <!-- 開啟特定型別
+        <provider
+            android:name="android.content.SearchRecentSuggestionsProvider"
+            android:authorities="Attribute"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+            </intent-filter>
+        </provider> -->
+
+        <!-- 不要刪除下面的元數據。
+              Flutter 工具使用它來生成 GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+        <meta-data
+            android:name="io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager.loadingUnitMapping"
+            android:value="2:boxComponent"/>
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="@string/a_google_api_key"/>
+    </application>
+
+</manifest>
