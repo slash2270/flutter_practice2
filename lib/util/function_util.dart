@@ -456,6 +456,10 @@ class FunctionUtil{
     }
   }
 
+  void navigateTo(BuildContext context, WidgetBuilder builder) {
+    Navigator.of(context).push(MaterialPageRoute(builder: builder));
+  }
+
 }
 
 class EventTitle {

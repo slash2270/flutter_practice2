@@ -135,7 +135,33 @@ dependencies:
   timelines: ^0.1.0 #時間軸
   font_awesome_flutter: ^9.0.0
 
-  intro_slider: ^3.0.9
+  intro_slider: ^3.0.9 #前導頁
+  sticky_headers: ^0.3.0+2
+  azlistview: ^2.0.0 #關鍵字搜尋List
+  common_utils: ^2.0.0
+  lpinyin: ^2.0.0 #漢字轉拼音
+  # github_language_colors
+  # url: https://github.com/Sky24n/github_language_colors.git or url: git://github.com/Sky24n/github_language_colors.git
+  github_language_colors:
+    git:
+      url: https://github.com/Sky24n/github_language_colors.git
+  scrollable_positioned_list: ^0.2.3 #優化List
+  charts_flutter: ^0.12.0 #官方圖表
+  palette_generator: ^0.3.3+1 #從影象中提取突出顏色
+  flutter_vector_icons: ^1.0.0 #more icons
+  flutter_circular_slider: ^2.5.0 #可手動滑動的載入圈
+  open_settings: ^2.0.2 #app設定
+  reorderables: ^0.5.0 #拖曳List
+  simple_gesture_detector: ^0.2.0 #易於使用、可靠和輕量級的手勢檢測器。 暴露簡單的API，以應對基本手勢。
+  gzx_dropdown_menu: ^3.1.0 #下拉選單
+  search_choices: ^2.0.21 #多種下拉選單
+  full_screen_menu: ^1.0.0 #fab
+  foldable_sidebar: ^1.0.0 #摺疊型drawer
+  flutter_inner_drawer: ^1.0.0+1 #內抽屜
+  kumi_popup_window: ^2.0.1 #簡易popup
+  solid_bottom_sheet: ^0.1.10 #實心底版
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -181,8 +207,8 @@ flutter:
     - assets/samples/
     - assets/images/
     - assets/images/process_timeline/
+    - assets/data/
     - audio/
-
 
   fonts:
     - family: Montserrat
@@ -192,6 +218,14 @@ flutter:
     - family: Hind
       fonts:
         - asset: fonts/hind/Hind-Regular.ttf
+    - family: RobotoMono
+      fonts:
+        - asset: fonts/RobotoMono-Regular.ttf
+        - asset: fonts/RobotoMono-Bold.ttf
+    - family: Raleway
+      fonts:
+        - asset: fonts/Raleway-Regular.ttf
+        - asset: fonts/Raleway-Bold.ttf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

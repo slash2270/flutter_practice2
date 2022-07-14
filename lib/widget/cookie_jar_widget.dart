@@ -31,11 +31,11 @@ class CookieJarWidgetState extends State<CookieJarWidget> {
   _initCookie() async{
     final cookies = <Cookie>[
       Cookie('name', 'wendux'),
-      Cookie('location', 'china'),
+      Cookie('location', 'china.json'),
     ];
     final cookiesExpired = <Cookie>[
       Cookie('name', 'wendux')..maxAge = 1,
-      Cookie('location', 'china')..expires = DateTime.now().add(const Duration(hours: 1)),
+      Cookie('location', 'china.json')..expires = DateTime.now().add(const Duration(hours: 1)),
     ];
     //final cj = CookieJar();
     //final cj = PersistCookieJar();

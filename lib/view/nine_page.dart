@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice2/util/function_util.dart';
 
-import '../widget/list_slidable_widget3.dart';
+import '../list_slidable/list_slidable_widget3.dart';
 
 class NinePage extends StatefulWidget {
   const NinePage({Key? key}) : super(key: key);

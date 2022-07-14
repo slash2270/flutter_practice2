@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice2/demo/staggered_grid_view_demo.dart';
+import 'package:flutter_practice2/staggered_gridView/staggered_grid_view_demo.dart';
 import 'package:flutter_practice2/util/constants.dart';
 import 'package:flutter_practice2/util/function_util.dart';
-import 'package:flutter_practice2/widget/list_slidable_widget1.dart';
+import 'package:flutter_practice2/list_slidable/list_slidable_widget1.dart';
 
-import '../widget/list_slidable_widget4.dart';
+import '../list_slidable/list_slidable_widget4.dart';
 
 class EightPage extends StatefulWidget {
   const EightPage({Key? key}) : super(key: key);

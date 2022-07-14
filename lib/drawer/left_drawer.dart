@@ -1,4 +1,5 @@
 import 'package:flustars/flustars.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice2/util/function_util.dart';
 import 'package:flutter_practice2/view/second_page.dart' as second;
@@ -36,6 +37,10 @@ import 'package:flutter_practice2/view/thirtythree_page.dart' as thirtythree;
 import 'package:flutter_practice2/view/thirtyfour_page.dart' as thirtyfour;
 import 'package:flutter_practice2/view/thirtyfive_page.dart' as thirtyfive;
 import 'package:flutter_practice2/view/thirtysix_page.dart' as thirtysix;
+import 'package:flutter_practice2/view/thirtyseven_page.dart' as thirtyseven;
+import 'package:flutter_practice2/view/thirtyeight_page.dart' as thirtyeight;
+import 'package:flutter_practice2/view/thirtynine_page.dart' as thirtynine;
+import 'package:flutter_practice2/view/forty_page.dart' as forty;
 
 class LeftDrawer extends StatefulWidget {
   const LeftDrawer({Key? key}) : super(key: key);
@@ -98,22 +103,26 @@ class _LeftDrawerState extends State<LeftDrawer> {
           _setDrawerItem(context, '18', _functionUtil.setScale(const eighteen.EighteenPage())),
           _setDrawerItem(context, '19', _functionUtil.setFade(const nineteen.NineteenPage())),
           _setDrawerItem(context, '20', _functionUtil.setSize(const twenty.TwentyPage())),
-          _setDrawerItem(context, '21', _functionUtil.setSize(const twentyone.TwentyOnePage())),
-          _setDrawerItem(context, '22', _functionUtil.setSize(const twentytwo.TwentyTwoPage())),
-          _setDrawerItem(context, '23', _functionUtil.setSize(const twentythree.TwentyThreePage())),
+          _setDrawerItem(context, '21', _functionUtil.setRotate(const twentyone.TwentyOnePage())),
+          _setDrawerItem(context, '22', _functionUtil.setScale(const twentytwo.TwentyTwoPage())),
+          _setDrawerItem(context, '23', _functionUtil.setFade(const twentythree.TwentyThreePage())),
           _setDrawerItem(context, '24', _functionUtil.setSize(const twentyfour.TwentyFourPage())),
-          _setDrawerItem(context, '25', _functionUtil.setSize(const twentyfive.TwentyFivePage())),
-          _setDrawerItem(context, '26', _functionUtil.setSize(const twentysix.TwentySixPage())),
-          _setDrawerItem(context, '27', _functionUtil.setSize(const twentyseven.TwentySevenPage())),
+          _setDrawerItem(context, '25', _functionUtil.setRotate(const twentyfive.TwentyFivePage())),
+          _setDrawerItem(context, '26', _functionUtil.setScale(const twentysix.TwentySixPage())),
+          _setDrawerItem(context, '27', _functionUtil.setFade(const twentyseven.TwentySevenPage())),
           _setDrawerItem(context, '28', _functionUtil.setSize(const twentyeight.TwentyEightPage())),
-          _setDrawerItem(context, '29', _functionUtil.setSize(const twentynine.TwentyNinePage())),
-          _setDrawerItem(context, '30', _functionUtil.setSize(const thirty.ThirtyPage())),
-          _setDrawerItem(context, '31', _functionUtil.setSize(const thirtyone.ThirtyOnePage())),
+          _setDrawerItem(context, '29', _functionUtil.setRotate(const twentynine.TwentyNinePage())),
+          _setDrawerItem(context, '30', _functionUtil.setScale(const thirty.ThirtyPage())),
+          _setDrawerItem(context, '31', _functionUtil.setFade(const thirtyone.ThirtyOnePage())),
           _setDrawerItem(context, '32', _functionUtil.setSize(const thirtytwo.ThirtyTwoPage())),
-          _setDrawerItem(context, '33', _functionUtil.setSize(const thirtythree.ThirtyThreePage())),
-          _setDrawerItem(context, '34', _functionUtil.setSize(const thirtyfour.ThirtyFourPage())),
-          _setDrawerItem(context, '35', _functionUtil.setSize(const thirtyfive.ThirtyFivePage())),
+          _setDrawerItem(context, '33', _functionUtil.setRotate(const thirtythree.ThirtyThreePage())),
+          _setDrawerItem(context, '34', _functionUtil.setScale(const thirtyfour.ThirtyFourPage())),
+          _setDrawerItem(context, '35', _functionUtil.setFade(const thirtyfive.ThirtyFivePage())),
           _setDrawerItem(context, '36', _functionUtil.setSize(const thirtysix.ThirtySixPage())),
+          _setDrawerItem(context, '37', _functionUtil.setRotate(const thirtyseven.ThirtySevenPage())),
+          _setDrawerItem(context, '38', _functionUtil.setScale(const thirtyeight.ThirtyEightPage())),
+          _setDrawerItem(context, '39', _functionUtil.setFade(const thirtynine.ThirtyNinePage())),
+          _setDrawerItem(context, '40', _functionUtil.setSize(const forty.FortyPage())),
         ],
       ),
     );

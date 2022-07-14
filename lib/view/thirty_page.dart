@@ -16,7 +16,6 @@ class ThirtyPageState extends State<ThirtyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // 一个不需要GlobalKey就可以openDrawer的AppBar
       appBar: AppBar(
         title: const Text('Thirty Page'),
         centerTitle: true,

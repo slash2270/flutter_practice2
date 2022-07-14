@@ -84,11 +84,7 @@ class _DownloadDemoState extends State<DownloadDemo> {
   }
 
   @pragma('vm:entry-point')
-  static void downloadCallback(
-      String id,
-      DownloadTaskStatus status,
-      int progress,
-      ) {
+  static void downloadCallback(String id, DownloadTaskStatus status, int progress) {
     print(
       'DownloadDemo Callback on background isolate: '
           'task ($id) is in status ($status) and process ($progress)',

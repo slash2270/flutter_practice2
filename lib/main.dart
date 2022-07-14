@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:ff_annotation_route_library/ff_annotation_route_library.dart';
 import 'package:flustars/flustars.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_practice2/bean/city_bean.dart';
 import 'package:flutter_practice2/widget/route_widget.dart';
@@ -17,6 +21,10 @@ main() async{
    WidgetsFlutterBinding.ensureInitialized();
    await FlutterDownloader.initialize(debug: true, ignoreSsl: true);
    initializeDateFormatting().then((_) => runApp(const MyApp()));
+   if (Platform.isAndroid) {
+     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+   }
+   debugPrintGestureArenaDiagnostics = false;
 }
 
 class MyApp extends StatefulWidget {

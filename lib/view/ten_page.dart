@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice2/util/constants.dart';
 import 'package:flutter_practice2/util/function_util.dart';
 
-import '../widget/list_slidable_widget2.dart';
+import '../list_slidable/list_slidable_widget2.dart';
 
 class TenPage extends StatefulWidget {
   const TenPage({Key? key}) : super(key: key);
