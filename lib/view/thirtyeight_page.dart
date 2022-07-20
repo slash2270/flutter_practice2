@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter_line_sdk/flutter_line_sdk.dart';
+import 'package:flutter_login_facebook/flutter_login_facebook.dart';
+import 'package:flutter_practice2/facebook/facebook_demo.dart';
+import 'package:flutter_practice2/demo/scroll_to_index_demo.dart';
 import 'package:flutter_practice2/inner_drawer/inner_demo.dart';
+import 'package:flutter_practice2/instagram/instagram_view.dart';
 import 'package:full_screen_menu/full_screen_menu.dart';
 import 'package:provider/provider.dart';
 
+import '../az_listview/common/index.dart';
+import '../demo/argon_buttons_demo.dart';
 import '../inner_drawer/inner_drawer_notifier.dart';
+import '../line/line_demo.dart';
 import '../util/constants.dart';
+import '../util/function_util.dart';
 import '../widget/fab_bottom_appbar_widget.dart';
 import '../widget/foldable_saidebar_widget.dart';
 
@@ -20,8 +28,24 @@ class ThirtyEightPage extends StatefulWidget {
 
 class ThirtyEightPageState extends State<ThirtyEightPage> {
 
+  late FunctionUtil _functionUtil;
+
+  @override
+  void initState() {
+    _functionUtil = FunctionUtil();
+    _initLine();
+    super.initState();
+  }
+
+  _initLine(){
+    LineSDK.instance.setup(Constants.lineId).then((_) {
+      LogUtil.e('LineSDK Prepared');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final facebookLogin = FacebookLogin(debug: true);
     return WillPopScope(
       onWillPop: () {
         if (FullScreenMenu.isVisible) {
@@ -56,6 +80,11 @@ class ThirtyEightPageState extends State<ThirtyEightPage> {
                     create: (context) => InnerDrawerNotifier(),
                     child: const InnerDemo(),
                   ),
+                  const ArgonButtonDemo(),
+                  const ScrollToIndexDemo(title: 'Scroll To Index Demo'),
+                  const LineDemo(),
+                  FacebookLoginDemo(plugin: facebookLogin),
+                  const InstagramView(),
                 ])
             )
           ],

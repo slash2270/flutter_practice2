@@ -41,6 +41,11 @@ import 'package:flutter_practice2/view/thirtyseven_page.dart' as thirtyseven;
 import 'package:flutter_practice2/view/thirtyeight_page.dart' as thirtyeight;
 import 'package:flutter_practice2/view/thirtynine_page.dart' as thirtynine;
 import 'package:flutter_practice2/view/forty_page.dart' as forty;
+import 'package:flutter_practice2/view/fortyone_page.dart' as fortyone;
+import 'package:flutter_practice2/view/fortytwo_page.dart' as fortytwo;
+import 'package:flutter_practice2/view/fortythree_page.dart' as fortythree;
+import 'package:flutter_practice2/view/fortyfour_page.dart' as fortyfour;
+import 'package:flutter_practice2/view/fortyfive_page.dart' as fortyfive;
 
 class LeftDrawer extends StatefulWidget {
   const LeftDrawer({Key? key}) : super(key: key);
@@ -123,6 +128,11 @@ class _LeftDrawerState extends State<LeftDrawer> {
           _setDrawerItem(context, '38', _functionUtil.setScale(const thirtyeight.ThirtyEightPage())),
           _setDrawerItem(context, '39', _functionUtil.setFade(const thirtynine.ThirtyNinePage())),
           _setDrawerItem(context, '40', _functionUtil.setSize(const forty.FortyPage())),
+          _setDrawerItem(context, '41', _functionUtil.setSize(const fortyone.FortyOnePage())),
+          _setDrawerItem(context, '42', _functionUtil.setSize(const fortytwo.FortyTwoPage())),
+          _setDrawerItem(context, '43', _functionUtil.setSize(const fortythree.FortyThreePage())),
+          _setDrawerItem(context, '44', _functionUtil.setSize(const fortyfour.FortyFourPage())),
+          _setDrawerItem(context, '45', _functionUtil.setSize(const fortyfive.FortyFivePage())),
         ],
       ),
     );

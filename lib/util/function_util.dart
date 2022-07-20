@@ -4,6 +4,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:fluro/fluro.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -13,6 +14,8 @@ import 'package:geolocator/geolocator.dart';
 import 'package:open_app_settings/open_app_settings.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:table_calendar/table_calendar.dart';
+
+import '../widget/kumi_popup_window_widget.dart';
 
 class FunctionUtil{
 
@@ -26,6 +29,7 @@ class FunctionUtil{
   late Padding padding;
   late String platForm;
   late FluroRouter router = FluroRouter();
+  late FunctionUtil _functionUtil;
   //late double displayHeight = MediaQueryData().size.height, displayWidth = MediaQueryData().size.width;
 
   /// 簡而言之，使用 [BuildContext.settings.arguments] 或 [BuildContext.arguments] 提取參數
@@ -107,6 +111,20 @@ class FunctionUtil{
 
   Padding initPadding(double? left, double? top, double? right, double? bottom, Widget child){
     return padding = Padding(padding: initEdgeInsets(left, top, right, bottom), child: child,);
+  }
+
+  CupertinoButton initCuperTinoButton(BuildContext context, String buttonName, Widget targetClass){
+    _functionUtil = FunctionUtil();
+    return CupertinoButton(
+        color: Colors.lightBlue,
+        child: _functionUtil.initText2(buttonName, Colors.white, Colors.transparent, 20),
+        onPressed: () {
+          Navigator.of(context).push(
+            CupertinoPageRoute(builder: (BuildContext context) {
+              return targetClass;
+            }),
+          );
+        });
   }
 
   Widget textPainter(String string) {
@@ -505,3 +523,4 @@ List<DateTime> daysInRange(DateTime first, DateTime last) {
 final kToday = DateTime.now();
 final kFirstDay = DateTime(kToday.year, kToday.month - 3, kToday.day);
 final kLastDay = DateTime(kToday.year, kToday.month + 3, kToday.day);
+
