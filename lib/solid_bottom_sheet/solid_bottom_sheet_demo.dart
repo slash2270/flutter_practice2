@@ -15,7 +15,7 @@ class _SolidBottomSheetWidgetState extends State<SolidBottomSheetWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Solid bottom sheet example"),
+        title: const Text("Solid Bottom Sheet Demo"),
       ),
       body: ListView.builder(
         itemCount: 20,

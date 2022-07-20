@@ -7,6 +7,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
+import 'package:flutter_line_sdk/flutter_line_sdk.dart';
 import 'package:flutter_practice2/bean/city_bean.dart';
 import 'package:flutter_practice2/widget/route_widget.dart';
 import 'package:flutter_practice2/util/constants.dart';

@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<key>FacebookAutoLogAppEventsEnabled</key>
+<false/>
+<key>NSUserTrackingUsageDescription</key>
+<string>Your reason, why you want to track the user</string>
 <key>NSAppTransportSecurity</key>
 <dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+    <key>NSAllowsArbitraryLoadsInWebContent</key>
+    <true/>
+</dict>
+<key>NSAppTransportSecurity</key>
+<dict>
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleTypeRole</key>
+    <string>Editor</string>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <!-- Specify URL scheme to use when returning from LINE to your app. -->
+      <string>line3rdp.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    </array>
+  </dict>
+</array>
+<key>LSApplicationQueriesSchemes</key>
+<array>
+<string>instagram</string>
+  <!-- Specify URL scheme to use when launching LINE from your app. -->
+  <string>lineauth2</string>
+</array>
   <key>NSExceptionDomains</key>
   <dict>
     <key>www.yourserver.com</key>

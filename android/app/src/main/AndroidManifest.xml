@@ -35,6 +35,9 @@
     <!-- 通过GPS得到精确位置 -->
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <!-- 通过GPS得到精确位置 -->
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>
+    <!-- 廣告編號 -->
+
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -42,6 +45,8 @@
         tools:targetApi="eclair" />
 
     <queries>
+        <!-- Android快速開啟 -->
+        <package android:name="com.facebook.katana" />
         <!-- SMS -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
@@ -221,6 +226,21 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
         <!-- 添加此“服務”元素 -->
         <service android:name="com.ryanheise.audioservice.AudioService"
             android:foregroundServiceType="mediaPlayback"
@@ -262,7 +282,7 @@
                 tools:node="remove" />
         </provider>
 
-        <!-- declare customized Initializer -->
+        <!-- 聲明自定義初始化器 -->
         <provider
             android:name="vn.hunghd.flutterdownloader.FlutterDownloaderInitializer"
             android:authorities="${applicationId}.flutter-downloader-init"
@@ -273,6 +293,10 @@
                 android:value="5" />
         </provider>
         <!-- End FlutterDownloader customization -->
+
+        <provider android:authorities="com.facebook.app.FacebookContentProvider770567263972853"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true" />
 
         <!-- 開啟特定型別
         <provider
@@ -296,6 +320,8 @@
             android:value="2:boxComponent"/>
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="@string/a_google_api_key"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token"/>
     </application>
 
 </manifest>

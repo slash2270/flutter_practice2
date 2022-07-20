@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -17,6 +19,10 @@ class _UrlLauncherDemoState extends State<UrlLauncherDemo> {
     {'title': '打开京东', 'scheme': 'openapp.jdmoble://'},
     {'title': '打开淘宝', 'scheme': 'taobao://'},
     {'title': '打开百度地图', 'scheme': ' baidumap://'},
+    (Platform.isAndroid || Platform.isIOS) == true ?
+    {'title': '打开Instagram個人', 'scheme': 'instagram://user?username=slash2270'} :
+    {'title': '打开Instagram個人', 'scheme': 'https://www.instagram.com/slash2270/'},
+    {'title': '打开Instagram動態', 'scheme': 'https://www.instagram.com/create/story'},
   ];
 
   @override

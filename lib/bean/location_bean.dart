@@ -30,8 +30,8 @@ class LatLngBean {
     this.lng,
   });
 
-  factory LatLngBean.fromJson(Map<String, dynamic> json) => _$LatLngFromJson(json);
-  Map<String, dynamic> toJson() => _$LatLngToJson(this);
+  factory LatLngBean.fromJson(Map<String, dynamic> json) => _$LatLngBeanFromJson(json);
+  Map<String, dynamic> toJson() => _$LatLngBeanToJson(this);
 
   final double? lat;
   final double? lng;
@@ -46,8 +46,8 @@ class RegionBean {
     required this.zoom,
   });
 
-  factory RegionBean.fromJson(Map<String, dynamic> json) => _$RegionFromJson(json);
-  Map<String, dynamic> toJson() => _$RegionToJson(this);
+  factory RegionBean.fromJson(Map<String, dynamic> json) => _$RegionBeanFromJson(json);
+  Map<String, dynamic> toJson() => _$RegionBeanToJson(this);
 
   final LatLngBean coords;
   final String id;
@@ -88,8 +88,8 @@ class LocationsBean {
     required this.regions,
   });
 
-  factory LocationsBean.fromJson(Map<String, dynamic> json) => _$LocationsFromJson(json);
-  Map<String, dynamic> toJson() => _$LocationsToJson(this);
+  factory LocationsBean.fromJson(Map<String, dynamic> json) => _$LocationsBeanFromJson(json);
+  Map<String, dynamic> toJson() => _$LocationsBeanToJson(this);
 
   final List<Office> offices;
   final List<RegionBean> regions;

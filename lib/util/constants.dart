@@ -45,14 +45,23 @@ class Constants{
   static const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
   static const defaultColor = Color(0xFF34568B);
 
-  static List<Color> listColors = [Colors.blue.shade900, Colors.blue.shade800, Colors.blue.shade700, Colors.blue.shade600, Colors.blue.shade500, Colors.blue.shade400, Colors.blue.shade300, Colors.blue.shade200, Colors.blue.shade100,];
+  static const lineId = '1';
+  static const facebookID = '7';
+  static const facebookSecret = '6';
+  //static const
+
+  static List<Color> listColors = [
+    Colors.blue.shade900, Colors.blue.shade800, Colors.blue.shade700, Colors.blue.shade600, Colors.blue.shade500, Colors.blue.shade400, Colors.blue.shade300, Colors.blue.shade200, Colors.blue.shade100
+  ];
 
   static const List<Widget> listClass = [
     MainPage(), SecondPage(), ThreePage(), FourPage(), FivePage(), SixPage(), SevenPage(), EightPage(), NinePage(), TenPage(), ElevenPage(), TwelvePage()
   ];
+
   static const List<String> listRoute = [
     'First', 'Second', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'
   ];
+
   static const List<String> listArguments = [
     'First', 'Second', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'
   ];

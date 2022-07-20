@@ -6,24 +6,26 @@ part of 'location_bean.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-LatLngBean _$LatLngFromJson(Map<String, dynamic> json) => LatLngBean(
-      lat: (json['lat'] as num).toDouble(),
-      lng: (json['lng'] as num).toDouble(),
+LatLngBean _$LatLngBeanFromJson(Map<String, dynamic> json) => LatLngBean(
+      lat: (json['lat'] as num?)?.toDouble(),
+      lng: (json['lng'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$LatLngToJson(LatLngBean instance) => <String, dynamic>{
+Map<String, dynamic> _$LatLngBeanToJson(LatLngBean instance) =>
+    <String, dynamic>{
       'lat': instance.lat,
       'lng': instance.lng,
     };
 
-RegionBean _$RegionFromJson(Map<String, dynamic> json) => RegionBean(
+RegionBean _$RegionBeanFromJson(Map<String, dynamic> json) => RegionBean(
       coords: LatLngBean.fromJson(json['coords'] as Map<String, dynamic>),
       id: json['id'] as String,
       name: json['name'] as String,
       zoom: (json['zoom'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$RegionToJson(RegionBean instance) => <String, dynamic>{
+Map<String, dynamic> _$RegionBeanToJson(RegionBean instance) =>
+    <String, dynamic>{
       'coords': instance.coords,
       'id': instance.id,
       'name': instance.name,
@@ -52,7 +54,8 @@ Map<String, dynamic> _$OfficeToJson(Office instance) => <String, dynamic>{
       'region': instance.region,
     };
 
-LocationsBean _$LocationsFromJson(Map<String, dynamic> json) => LocationsBean(
+LocationsBean _$LocationsBeanFromJson(Map<String, dynamic> json) =>
+    LocationsBean(
       offices: (json['offices'] as List<dynamic>)
           .map((e) => Office.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -61,7 +64,8 @@ LocationsBean _$LocationsFromJson(Map<String, dynamic> json) => LocationsBean(
           .toList(),
     );
 
-Map<String, dynamic> _$LocationsToJson(LocationsBean instance) => <String, dynamic>{
+Map<String, dynamic> _$LocationsBeanToJson(LocationsBean instance) =>
+    <String, dynamic>{
       'offices': instance.offices,
       'regions': instance.regions,
     };
