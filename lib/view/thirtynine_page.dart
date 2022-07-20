@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice2/animated_background/animated_background_demo.dart';
+import 'package:flutter_practice2/demo/blur_demo.dart';
+import 'package:flutter_practice2/demo/ota_update_demo.dart';
 import 'package:flutter_practice2/demo/pimp_my_button_demo.dart';
+import 'package:flutter_practice2/keyboard_size/keyboard_size_demo.dart';
+import 'package:flutter_practice2/uploader/upload_widget.dart';
 import 'package:flutter_practice2/util/constants.dart';
 import 'package:flutter_practice2/widget/draggable_bottom_sheet_widget.dart';
 import '../demo/story_demo.dart';
@@ -60,6 +65,50 @@ class ThirtyNinePageState extends State<ThirtyNinePage> {
         )
     );
 
+    final sliverBlur = SliverToBoxAdapter(
+        child: Column(
+          children: [
+            _functionUtil.initSizedBox(20.0),
+            _functionUtil.initText2('Blur 模糊', Constants.colorBlack, Constants.colorTransparent, 24),
+            _functionUtil.initSizedBox(16.0),
+            _functionUtil.initCuperTinoButton(context, 'blur', const BlurDemo(),)
+          ],
+        )
+    );
+
+    final sliverAnimatedBackground = SliverToBoxAdapter(
+        child: Column(
+          children: [
+            _functionUtil.initSizedBox(20.0),
+            _functionUtil.initText2('AnimatedBackground 動畫背景', Constants.colorBlack, Constants.colorTransparent, 24),
+            _functionUtil.initSizedBox(16.0),
+            _functionUtil.initCuperTinoButton(context, 'animated', const AnimatedBackgroundDemo(),)
+          ],
+        )
+    );
+
+    final sliverOTA = SliverToBoxAdapter(
+        child: Column(
+          children: [
+            _functionUtil.initSizedBox(20.0),
+            _functionUtil.initText2('OTA Update 下載安裝更新', Constants.colorBlack, Constants.colorTransparent, 24),
+            _functionUtil.initSizedBox(16.0),
+            _functionUtil.initCuperTinoButton(context, 'download', const OtaUpdateDemo(),)
+          ],
+        )
+    );
+
+    final sliverKeyboard = SliverToBoxAdapter(
+        child: Column(
+          children: [
+            _functionUtil.initSizedBox(20.0),
+            _functionUtil.initText2('KeyboardSize 鍵盤尺寸', Constants.colorBlack, Constants.colorTransparent, 24),
+            _functionUtil.initSizedBox(16.0),
+            _functionUtil.initCuperTinoButton(context, 'size', const KeyboardSizeDemo(),)
+          ],
+        )
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('ThirtyNine Page'),
@@ -78,6 +127,10 @@ class ThirtyNinePageState extends State<ThirtyNinePage> {
           sliverDraggableBottomSheet,
           sliverPimpMyButton,
           sliverStory,
+          sliverBlur,
+          sliverAnimatedBackground,
+          sliverOTA,
+          sliverKeyboard,
         ],
       ),
       resizeToAvoidBottomInset: false,

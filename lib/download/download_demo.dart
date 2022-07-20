@@ -34,7 +34,7 @@ class _DownloadDemoState extends State<DownloadDemo> {
   @override
   void initState() {
     super.initState();
-    FunctionUtil().checkPermission(Permission.notification);
+    //FunctionUtil().checkPermission(Permission.notification);
     _bindBackgroundIsolate();
     FlutterDownloader.registerCallback(downloadCallback);
     _loading = true;

@@ -15,8 +15,8 @@ import 'package:flutter_practice2/view/twelve_page.dart';
 
 class Constants{
 
-  static const aApiKey = 'AIzaSyDzawQDDnl2psVF-v0L4w7Cn8wdH3x0hsA';
-  static const bApiKey = 'AIzaSyBIJ9TJpFeNrUkWy4iyQV_0nJDXmXZHYc0';
+  static const aApiKey = 'A';
+  static const bApiKey = 'A';
 
   static const routeSearch = '/search';
   static const routeHome = '/home';
