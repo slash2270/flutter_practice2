@@ -181,7 +181,7 @@ dependencies:
   animated_background: ^2.0.0
   ota_update: ^4.0.1 #下載安裝更新 還沒有IOS
   flutter_keyboard_size: ^1.0.0+4 #調整鍵盤尺寸
-  #flutter_uploader: ^1.2.1 #上傳
+  #flutter_uploader: ^1.2.1 #上傳 workManager重疊
   #file_picker: ^4.6.1 #選擇檔案
   #shared_preferences: ^2.0.15
   #flutter_local_notifications: ^9.7.0

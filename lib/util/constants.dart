@@ -15,8 +15,8 @@ import 'package:flutter_practice2/view/twelve_page.dart';
 
 class Constants{
 
-  static const aApiKey = 'A';
-  static const bApiKey = 'A';
+  static const aApiKey = 'AIzaSyDzawQDDnl2psVF-v0L4w7Cn8wdH3x0hsA';
+  static const bApiKey = 'AIzaSyBIJ9TJpFeNrUkWy4iyQV_0nJDXmXZHYc0';
 
   static const routeSearch = '/search';
   static const routeHome = '/home';
@@ -45,9 +45,9 @@ class Constants{
   static const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
   static const defaultColor = Color(0xFF34568B);
 
-  static const lineId = '1';
-  static const facebookID = '7';
-  static const facebookSecret = '6';
+  static const lineId = '1657306634';
+  static const facebookID = '792270565110291';
+  static const facebookSecret = '67c38fa1cfc16ea5d138add491f3f0ac';
   //static const
 
   static List<Color> listColors = [

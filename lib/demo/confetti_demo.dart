@@ -62,8 +62,7 @@ class _ConfettiDemoState extends State<ConfettiDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Stack(
+    return Stack(
         children: <Widget>[
           //中心——爆炸
           Align(
@@ -185,14 +184,13 @@ class _ConfettiDemoState extends State<ConfettiDemo> {
                 child: _display('艱難而罕見')),
           ),
         ],
-      ),
-    );
+      );
   }
 
   Text _display(String text) {
     return Text(
       text,
-      style: const TextStyle(color: Colors.white, fontSize: 20),
+      style: const TextStyle(color: Colors.black, fontSize: 20),
     );
   }
 }

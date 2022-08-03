@@ -4,7 +4,6 @@ import 'package:flutter_practice2/demo/blur_demo.dart';
 import 'package:flutter_practice2/demo/ota_update_demo.dart';
 import 'package:flutter_practice2/demo/pimp_my_button_demo.dart';
 import 'package:flutter_practice2/keyboard_size/keyboard_size_demo.dart';
-import 'package:flutter_practice2/uploader/upload_widget.dart';
 import 'package:flutter_practice2/util/constants.dart';
 import 'package:flutter_practice2/widget/draggable_bottom_sheet_widget.dart';
 import '../demo/story_demo.dart';
