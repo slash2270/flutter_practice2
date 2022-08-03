@@ -309,25 +309,6 @@
                 android:resource="@xml/filepaths" />
         </provider>
 
-        <provider
-            android:name="androidx.work.impl.WorkManagerInitializer"
-            android:authorities="${applicationId}.workmanager-init"
-            android:enabled="false"
-            android:exported="false" />
-
-        <provider
-            android:name="com.bluechilli.flutteruploader.FlutterUploaderInitializer"
-            android:authorities="${applicationId}.flutter-upload-init"
-            android:exported="false">
-            <!-- 改變這個數字來配置最大並發任務數 -->
-            <meta-data
-                android:name="com.bluechilli.flutterupload.MAX_CONCURRENT_TASKS"
-                android:value="3" />
-
-            <!-- 更改此數字以配置上傳 http 請求的連接超時 -->
-            <meta-data android:name="com.bluechilli.flutteruploader.UPLOAD_CONNECTION_TIMEOUT_IN_SECONDS" android:value="3600" />
-        </provider>
-
         <!-- 開啟特定型別
         <provider
             android:name="android.content.SearchRecentSuggestionsProvider"
