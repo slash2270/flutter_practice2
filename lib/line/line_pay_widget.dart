@@ -50,8 +50,8 @@ class _LinePayWidgetState extends State<LinePayWidget> {
     var uri = Uri.parse('https://sandbox-api-pay.line.me/v2/payments/request');
     final header = {
       "Content-Type": "application/json",
-      "X-LINE-ChannelId": "1657313183",
-      "X-LINE-ChannelSecret": "60043b7286ec4b5b0d61d85a117c8a84"
+      "X-LINE-ChannelId": "1",
+      "X-LINE-ChannelSecret": "6"
     };
     final body = {
       "productName" : "測試產品1",
@@ -152,8 +152,8 @@ class _LinePayWidgetState extends State<LinePayWidget> {
     var uri = Uri.parse('https://sandbox-api-pay.line.me/v2/payments/oneTimeKeys/pay');
     final header = {
       "Content-Type": "application/json",
-      "X-LINE-ChannelId": "1657313183",
-      "X-LINE-ChannelSecret": "60043b7286ec4b5b0d61d85a117c8a84"
+      "X-LINE-ChannelId": "1",
+      "X-LINE-ChannelSecret": "6"
     };
     final body = {
       "productName" : "測試產品1",
