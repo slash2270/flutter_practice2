@@ -295,7 +295,7 @@
         </provider>
         <!-- 結束 FlutterDownloader 自定義 -->
 
-        <provider android:authorities="com.facebook.app.FacebookContentProvider770567263972853"
+        <provider android:authorities="com.facebook.app.FacebookContentProvider"
             android:name="com.facebook.FacebookContentProvider"
             android:exported="true" />
 
