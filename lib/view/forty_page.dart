@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice2/demo/confetti_demo.dart';
+import 'package:flutter_practice2/demo/data_structure_demo.dart';
 
 import '../demo/algorithm_demo.dart';
 import '../util/constants.dart';
@@ -29,6 +30,7 @@ class FortyPageState extends State<FortyPage> {
 
     const sliverConfetti = ConfettiDemo();
     const sliverAlgorithm = AlgorithmDemo();
+    const sliverDataStructure = DataStructureDemo();
 
     return Scaffold(
       appBar: AppBar(
@@ -49,6 +51,7 @@ class FortyPageState extends State<FortyPage> {
           delegate: SliverChildListDelegate([
             sliverConfetti,
             sliverAlgorithm,
+            sliverDataStructure,
           ])
         )]
       ),
