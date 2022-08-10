@@ -15,8 +15,6 @@ import 'package:open_app_settings/open_app_settings.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../widget/kumi_popup_window_widget.dart';
-
 class FunctionUtil{
 
   ///這個 model 只管理一個變數。
