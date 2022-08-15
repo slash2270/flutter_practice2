@@ -7,8 +7,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
-import 'package:flutter_line_sdk/flutter_line_sdk.dart';
 import 'package:flutter_practice2/bean/city_bean.dart';
+import 'package:flutter_practice2/sqlflite/sql_manager.dart';
 import 'package:flutter_practice2/widget/route_widget.dart';
 import 'package:flutter_practice2/util/constants.dart';
 import 'package:flutter_practice2/view/main_page.dart';
@@ -73,6 +73,48 @@ class _MyAppState extends State<MyApp> {
 
     List<CityBean>? dataList = SpUtil.getObjList("loc_city_list", (v) => CityBean.fromJson(v as Map<String, dynamic>));
     LogUtil.e("CityList: ${dataList == null ? "null" : dataList.toString()}");
+  }
+
+  @override
+  void didChangeDependencies() {
+    // 依賴變化
+    if (kDebugMode) {
+      print('didChangeDependencies Third');
+    }
+    super.didChangeDependencies();
+  }
+
+  @override
+  void didUpdateWidget(covariant MyApp oldWidget) {
+    // 元件發生變化
+    if (kDebugMode) {
+      print('didUpdateWidget Third');
+    }
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void setState(VoidCallback fn) {
+    // 更新畫面
+    if (kDebugMode) {
+      print('setState Third');
+    }
+    super.setState(fn);
+  }
+
+  @override
+  void deactivate() {
+    // 切換頁面, 先暫時移除後添加
+    if (kDebugMode) {
+      print('deactivate Third');
+    }
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    SqlManager.delete();
+    super.dispose();
   }
 
   @override

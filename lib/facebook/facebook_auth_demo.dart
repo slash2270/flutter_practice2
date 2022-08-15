@@ -3,6 +3,9 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../az_listview/common/index.dart';
 
 String prettyPrint(Map json) {
   JsonEncoder encoder = const JsonEncoder.withIndent('  ');
@@ -63,6 +66,9 @@ class _FacebookAuthDemoState extends State<FacebookAuthDemo> {
 
     if (result.status == LoginStatus.success) {
       _accessToken = result.accessToken;
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('token', _accessToken!.token);
+      // LogUtil.e('Facebook auth token: ${_accessToken!.token}');
       _printCredentials();
       // get the user data
       // by default we get the userId, email,name and picture

@@ -264,17 +264,25 @@ class MainPageState extends State<MainPage> with TickerProviderStateMixin {
   }
 
   void _getEventBus(){
-    _eventBusSubscript = EventBusUtils.getInstance().on<EventBusBroadCast>().listen((event) {
+    _eventBusSubscript = EventBusUtils.getInstance().on<EventBusMap>().listen((event) {
       setState(() {
         _lat = event.lat;
         _lng = event.lng;
       });
       _address.addAll(event.address);
       //LogUtil.e('MainPage getEventBus lat:$_lat lng:$_lng address:${_address.length}');
-      if(_address.isNotEmpty){
+      if (_address.isNotEmpty) {
         for (var address in _address) {
           //LogUtil.e('MainPage MapCreate lat: $_lat lng: $_lng address${address.addressLine}/${address.countryName}');
-          googleOffice.offices.add(locations.Office(address: address.addressLine, id: '', image: 'https://lh3.googleusercontent.com/gG1zKXcSmRyYWHwUn2Z0MITpdqwb52RAEp3uthG2J5Xl-4_Wz7_WmoM6T_TBg6Ut3L1eF-8XENO10sxVIFdQHilj8iRG29wROpSoug', lat: _lat, lng: _lng, name: '查詢位置', phone: '', region: ''));
+          googleOffice.offices.add(locations.Office(
+              address: address.addressLine,
+              id: '',
+              image: 'https://lh3.googleusercontent.com/gG1zKXcSmRyYWHwUn2Z0MITpdqwb52RAEp3uthG2J5Xl-4_Wz7_WmoM6T_TBg6Ut3L1eF-8XENO10sxVIFdQHilj8iRG29wROpSoug',
+              lat: _lat,
+              lng: _lng,
+              name: '查詢位置',
+              phone: '',
+              region: ''));
         }
       }
       _setMarkers();

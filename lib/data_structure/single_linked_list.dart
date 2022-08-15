@@ -2,9 +2,8 @@
 
 //定義SingleLinkedList 管理英雄
 import 'package:common_utils/common_utils.dart';
-import 'package:flutter/material.dart';
-
-import '../model/stack_model.dart';
+import 'hero_node.dart';
+import 'stack_model.dart';
 
 class SingleLinkedList {
   //先初始化一個頭節點,頭節點不要動,不存放具體數據
@@ -76,7 +75,7 @@ class SingleLinkedList {
   String reverseStack(HeroNode head) {
     String s = '';
     if(head.next == null) return s;
-    StackModel<HeroNode> stack = StackModel<HeroNode>();
+    StackQueue<HeroNode> stack = StackQueue<HeroNode>();
     //創建一個stack將各個節點push進stack中
     HeroNode cur = head.next;
     while(cur != null) {
@@ -218,24 +217,6 @@ class SingleLinkedList {
       LogUtil.e("singleLinkedList list:要刪除的節點${heroNode.no}不存在\n");
     }
 
-  }
-
-}
-
-//定義HeroNode, 每個HeroNode 對象就是一個節點
-class HeroNode {
-  int no;
-  String name;
-  String nickname;
-  HeroNode next; //指向下一個節點
-
-  //構造函數
-  HeroNode({@required this.no, @required this.name, @required this.nickname});
-
-  //重寫toString
-  @override
-  String toString() {
-    return "HeroNode[no=${no}name=${name}nickname=$nickname]\n";
   }
 
 }

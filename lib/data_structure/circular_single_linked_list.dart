@@ -1,11 +1,11 @@
 // 創建一個環形的單向鏈結串列
 import 'package:common_utils/common_utils.dart';
 
-import 'Node.dart';
+import 'node1.dart';
 
 class CircularSingleLinkedList {
   // 創建一個first節點, 當前沒有編號
-  Node first = Node(no: -1);
+  Node1 first = Node1(no: -1);
 
   // 添加節點, 構建成一個環形的鏈結串列
   void addNode(int numS) {
@@ -13,11 +13,11 @@ class CircularSingleLinkedList {
     if (numS < 1) {
       LogUtil.e("CircularSingleLinkedList addNode:num值不正確!\n");
     }
-    Node cur = Node(); // 輔助變數 幫助構建環形鏈結串列
+    Node1 cur = Node1(); // 輔助變數 幫助構建環形鏈結串列
     // 使用for循環創建環形鏈結串列
     for (int i = 1; i <= numS; i++) {
       // 根據編號創建節點
-      Node child = Node(no: i);
+      Node1 child = Node1(no: i);
       // 若為第一個節點
       if (i == 1) {
         first = child;
@@ -41,7 +41,7 @@ class CircularSingleLinkedList {
       return s;
     }
     // 因為 first不能動,因此需要使用一個輔助指針
-    Node cur = first;
+    Node1 cur = first;
     while (true) {
       if(cur.no == 41) {
         s += "節點編號${cur.getNo()}\n";
@@ -69,7 +69,7 @@ class CircularSingleLinkedList {
       return s;
     }
     // 創建一個輔助指針,幫助完成node出隊列
-    Node helper = first;
+    Node1 helper = first;
     while (true) {
       if (helper.getNext() == first) { // helper指向最後一個節點
         break;
@@ -109,4 +109,5 @@ class CircularSingleLinkedList {
     LogUtil.e("CircularSingleLinkedList countNode:最後留在環中的節點為${list[list.length - 2]},${list[list.length - 1]}");
     return s;
   }
+
 }

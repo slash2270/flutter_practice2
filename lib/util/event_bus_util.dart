@@ -10,9 +10,10 @@ class EventBusUtils {
   }
 }
 
-class EventBusBroadCast {
+class EventBusMap {
+
   double lat, lng;
   List<Address> address;
-  EventBusBroadCast(this.lat, this.lng, this.address);
+  EventBusMap({required this.lat, required this.lng, required this.address});
 
 }

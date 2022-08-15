@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:flutter_practice2/facebook/facebook_auth_demo.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class FacebookLoginDemo extends StatefulWidget {
   final FacebookLogin plugin;
@@ -23,7 +24,6 @@ class _FacebookLoginDemoState extends State<FacebookLoginDemo> {
   @override
   void initState() {
     super.initState();
-
     _getSdkVersion();
     _updateLoginInfo();
   }
@@ -69,8 +69,7 @@ class _FacebookLoginDemoState extends State<FacebookLoginDemo> {
     );
   }
 
-  Widget _buildUserInfo(BuildContext context, FacebookUserProfile profile,
-      FacebookAccessToken accessToken, String? email) {
+  Widget _buildUserInfo(BuildContext context, FacebookUserProfile profile, FacebookAccessToken accessToken, String? email) {
     final avatarUrl = _imageUrl;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,13 +138,16 @@ class _FacebookLoginDemoState extends State<FacebookLoginDemo> {
     FacebookUserProfile? profile;
     String? email;
     String? imageUrl;
-
+    // LogUtil.e('Facebook token: ${token != null}');
     if (token != null) {
       profile = await plugin.getUserProfile();
       if (token.permissions.contains(FacebookPermission.email.name)) {
         email = await plugin.getUserEmail();
       }
       imageUrl = await plugin.getProfileImageUrl(width: 100);
+      // LogUtil.e('Facebook user token: ${token.token} ${token.userId} ${plugin.getUserEmail()} ${plugin.getUserProfile()}');
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('facebook_token', token.token);
     }
 
     setState(() {
@@ -153,6 +155,7 @@ class _FacebookLoginDemoState extends State<FacebookLoginDemo> {
       _profile = profile;
       _email = email;
       _imageUrl = imageUrl;
+      // LogUtil.e('Facebook url: $_imageUrl');
     });
   }
 }

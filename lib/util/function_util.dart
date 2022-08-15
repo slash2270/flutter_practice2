@@ -3,17 +3,21 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:common_utils/common_utils.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:flutter_practice2/util/constants.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:open_app_settings/open_app_settings.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:table_calendar/table_calendar.dart';
+
+import '../widget/kumi_popup_window_widget.dart';
 
 class FunctionUtil{
 
@@ -27,7 +31,6 @@ class FunctionUtil{
   late Padding padding;
   late String platForm;
   late FluroRouter router = FluroRouter();
-  late FunctionUtil _functionUtil;
   //late double displayHeight = MediaQueryData().size.height, displayWidth = MediaQueryData().size.width;
 
   /// 簡而言之，使用 [BuildContext.settings.arguments] 或 [BuildContext.arguments] 提取參數
@@ -111,11 +114,23 @@ class FunctionUtil{
     return padding = Padding(padding: initEdgeInsets(left, top, right, bottom), child: child,);
   }
 
+  ElevatedButton initElevatedButton(BuildContext context, String buttonName, Widget targetClass){
+    return ElevatedButton(
+      child: initText2(buttonName, Colors.white, Colors.transparent, 20),
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (BuildContext context) {
+            return targetClass;
+          }),
+        );
+      }
+    );
+  }
+
   CupertinoButton initCuperTinoButton(BuildContext context, String buttonName, Widget targetClass){
-    _functionUtil = FunctionUtil();
     return CupertinoButton(
         color: Colors.lightBlue,
-        child: _functionUtil.initText2(buttonName, Colors.white, Colors.transparent, 20),
+        child: initText2(buttonName, Colors.white, Colors.transparent, 20),
         onPressed: () {
           Navigator.of(context).push(
             CupertinoPageRoute(builder: (BuildContext context) {
@@ -521,4 +536,27 @@ List<DateTime> daysInRange(DateTime first, DateTime last) {
 final kToday = DateTime.now();
 final kFirstDay = DateTime(kToday.year, kToday.month - 3, kToday.day);
 final kLastDay = DateTime(kToday.year, kToday.month + 3, kToday.day);
+
+
+Future<List<int>?> compressAndTryCatch(String path) async {
+  List<int>? result;
+  try {
+    result = await FlutterImageCompress.compressWithFile(
+      path,
+      format: CompressFormat.heic,
+    );
+  } on UnsupportedError catch (e) {
+    LogUtil.e(e.message);
+    result = await FlutterImageCompress.compressWithFile(
+      path,
+      format: CompressFormat.jpeg,
+    );
+  } on Error catch (e) {
+    LogUtil.e(e.toString());
+    LogUtil.e(e.stackTrace);
+  } on Exception catch (e) {
+    LogUtil.e(e.toString());
+  }
+  return result;
+}
 

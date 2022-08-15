@@ -204,7 +204,7 @@ class SearchBarWidgetState extends State<SearchBarWidget> with TickerProviderSta
 
       //LogUtil.e('SearchBar lat:$lat lng:$lng address:${address.length}');
 
-      EventBusUtils.getInstance().fire(EventBusBroadCast(lat, lng, address));
+      EventBusUtils.getInstance().fire(EventBusMap(lat: lat, lng: lng, address: address));
 
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("${prediction.description} - $lat/$lng")),

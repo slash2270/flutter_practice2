@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice2/view/eight_page.dart';
 import 'package:flutter_practice2/view/eleven_page.dart';
@@ -46,8 +47,23 @@ class Constants{
 
   static const lineId = '1';
   static const facebookID = '7';
+  static const facebookAppID = '7';
   static const facebookSecret = '6';
-  //static const
+  static const facebookApi = 'https://graph.facebook.com/';
+  static const facebookLoginApi = 'https://www.facebook.com/v14.0/dialog/oauth?client_id=$facebookAppID&redirect_uri={"https://www.facebook.com/"}&state={"{st=state123abc,ds=123456789}"}';
+  static const twitchID = 'b';
+  static const twitchPW = 'u';
+  static const twitchApi1 = 'https://id.twitch.tv/';
+  static const twitchApi2 = 'https://api.twitch.tv/helix/';
+  static const twitchAuthHeader = 'Bearer';
+  static const twitchAuthApi = 'oauth2/authorize';
+  static const twitchUserApi = 'users?id=141981764';
+  static const twitchTokenApi = 'oauth2/token';
+  static const twitchStreamKeyApi = 'streams/key?broadcaster_id=';
+  static const twitchStaticKey = 'l';
+  static const twitchStreamRtmp1 = 'rtmp://live-hel.twitch.tv/app/';
+  static const twitchStreamRtmp2 = 'rtmp://live-tpe01.twitch.tv/app/';
+  static const twitchChannelName = 't';
 
   static List<Color> listColors = [
     Colors.blue.shade900, Colors.blue.shade800, Colors.blue.shade700, Colors.blue.shade600, Colors.blue.shade500, Colors.blue.shade400, Colors.blue.shade300, Colors.blue.shade200, Colors.blue.shade100

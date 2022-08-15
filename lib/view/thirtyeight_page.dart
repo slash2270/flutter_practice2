@@ -3,6 +3,7 @@ import 'package:flutter_line_sdk/flutter_line_sdk.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:flutter_practice2/facebook/facebook_demo.dart';
 import 'package:flutter_practice2/demo/scroll_to_index_demo.dart';
+import 'package:flutter_practice2/facebook/facebook_login_web.dart';
 import 'package:flutter_practice2/inner_drawer/inner_demo.dart';
 import 'package:flutter_practice2/instagram/instagram_view.dart';
 import 'package:full_screen_menu/full_screen_menu.dart';
@@ -45,7 +46,6 @@ class ThirtyEightPageState extends State<ThirtyEightPage> {
 
   @override
   Widget build(BuildContext context) {
-    final facebookLogin = FacebookLogin(debug: true);
     return WillPopScope(
       onWillPop: () {
         if (FullScreenMenu.isVisible) {
@@ -83,7 +83,8 @@ class ThirtyEightPageState extends State<ThirtyEightPage> {
                   const ArgonButtonDemo(),
                   const ScrollToIndexDemo(title: 'Scroll To Index Demo'),
                   const LineDemo(),
-                  FacebookLoginDemo(plugin: facebookLogin),
+                  FacebookLoginDemo(plugin: FacebookLogin(debug: true)),
+                  const FacebookLoginWeb(),
                   const InstagramView(),
                 ])
             )
