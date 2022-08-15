@@ -59,6 +59,20 @@ class DataStructureDemoState extends State<DataStructureDemo> {
                 GestureDetector(
                     child: Chip(
                         avatar: CircleAvatar(backgroundColor: Colors.blue, child: _functionUtil.initIcon(Icons.functions)),
+                        label: _functionUtil.initText('還原')
+                    ),
+                    onTap: () => _cancelSort()
+                ),
+                GestureDetector(
+                    child: Chip(
+                      avatar: CircleAvatar(backgroundColor: Colors.blue, child: _functionUtil.initIcon(Icons.functions)),
+                      label: _functionUtil.initText('雙向鏈結串列 Double LinkedList'),
+                    ),
+                    onTap: () => _doubleLinkedList()
+                ),
+                GestureDetector(
+                    child: Chip(
+                        avatar: CircleAvatar(backgroundColor: Colors.blue, child: _functionUtil.initIcon(Icons.functions)),
                         label: _functionUtil.initText('稀疏矩陣 Sparse Matrix')
                     ),
                     onTap: () => _sparseMatrix()
@@ -73,16 +87,44 @@ class DataStructureDemoState extends State<DataStructureDemo> {
                 GestureDetector(
                     child: Chip(
                       avatar: CircleAvatar(backgroundColor: Colors.blue, child: _functionUtil.initIcon(Icons.functions)),
-                      label: _functionUtil.initText('單向鏈結串列 Single LinkedList'),
+                      label: _functionUtil.initText('搜尋二元樹 SearchBinaryTree'),
                     ),
-                    onTap: () => _singleLinkedList()
+                    onTap: () => _searchBinaryTree()
                 ),
                 GestureDetector(
                     child: Chip(
                       avatar: CircleAvatar(backgroundColor: Colors.blue, child: _functionUtil.initIcon(Icons.functions)),
-                      label: _functionUtil.initText('雙向鏈結串列 Double LinkedList'),
+                      label: _functionUtil.initText('線索二元樹 ThreadedBinaryTree'),
                     ),
-                    onTap: () => _doubleLinkedList()
+                    onTap: () => _threadedBinaryTree()
+                ),
+                GestureDetector(
+                    child: Chip(
+                      avatar: CircleAvatar(backgroundColor: Colors.blue, child: _functionUtil.initIcon(Icons.functions)),
+                      label: _functionUtil.initText('二元樹 BinaryTree'),
+                    ),
+                    onTap: () => _binaryTree()
+                ),
+                GestureDetector(
+                    child: Chip(
+                      avatar: CircleAvatar(backgroundColor: Colors.blue, child: _functionUtil.initIcon(Icons.functions)),
+                      label: _functionUtil.initText('遞迴 Recursion'),
+                    ),
+                    onTap: () => _recursion()
+                ),
+                GestureDetector(
+                    child: Chip(
+                      avatar: CircleAvatar(backgroundColor: Colors.blue, child: _functionUtil.initIcon(Icons.functions)),
+                      label: _functionUtil.initText('雜湊表 HashTable'),
+                    ),
+                    onTap: () => _hashTable()
+                ),
+                GestureDetector(
+                    child: Chip(
+                      avatar: CircleAvatar(backgroundColor: Colors.blue, child: _functionUtil.initIcon(Icons.functions)),
+                      label: _functionUtil.initText('堆疊 Stack'),
+                    ),
+                    onTap: () => _stack()
                 ),
                 GestureDetector(
                     child: Chip(
@@ -93,10 +135,10 @@ class DataStructureDemoState extends State<DataStructureDemo> {
                 ),
                 GestureDetector(
                     child: Chip(
-                        avatar: CircleAvatar(backgroundColor: Colors.blue, child: _functionUtil.initIcon(Icons.functions)),
-                        label: _functionUtil.initText('還原')
+                      avatar: CircleAvatar(backgroundColor: Colors.blue, child: _functionUtil.initIcon(Icons.functions)),
+                      label: _functionUtil.initText('單向鏈結串列 Single LinkedList'),
                     ),
-                    onTap: () => _cancelSort()
+                    onTap: () => _singleLinkedList()
                 ),
               ],
             )
@@ -154,6 +196,12 @@ class DataStructureDemoState extends State<DataStructureDemo> {
   _singleLinkedList() => setState(() => _text = _dataStructureUtil.singleLinkedList());
   _doubleLinkedList() => setState(() => _text = _dataStructureUtil.doubleLinkedList());
   _josephusProblem() => setState(() => _text = _dataStructureUtil.josephusProblem());
+  _stack() => setState(() => _text = _dataStructureUtil.stack());
+  _recursion() => setState(() => _text = _dataStructureUtil.recursion());
+  _hashTable() => setState(() => _text = _dataStructureUtil.hashTable());
+  _binaryTree() => setState(() => _text = _dataStructureUtil.binaryTree());
+  _threadedBinaryTree() => setState(() => _text = _dataStructureUtil.threadedBinaryTree());
+  _searchBinaryTree() => setState(() => _text = _dataStructureUtil.searchBinaryTree());
 
   _cancelSort() {
     _zeroQueue();
@@ -168,17 +216,17 @@ class AlgorithmTextBuilder extends SpecialTextSpanBuilder{
 
     if (flag.isEmpty || flag == "") return null;
 
-    if (isStart(flag, 'S')) {
-      return AlgorithmSpecialText('S', ':', textStyle?.copyWith(color: Colors.blue, fontSize: 18.0));
-    } else if(isStart(flag, 'M')) {
-      return AlgorithmSpecialText('M', ':', textStyle?.copyWith(color: Colors.blue, fontSize: 18.0));
-    } else if(isStart(flag, 'P')) {
-      return AlgorithmSpecialText('P', ':', textStyle?.copyWith(color: Colors.blue, fontSize: 18.0));
-    } else if(isStart(flag, 'L')) {
-      return AlgorithmSpecialText('L', ':', textStyle?.copyWith(color: Colors.blue, fontSize: 18.0));
-    } else if(isStart(flag, 'J')) {
-      return AlgorithmSpecialText('J', ':', textStyle?.copyWith(color: Colors.blue, fontSize: 18.0));
-    }
+    // if (isStart(flag, 'S')) {
+    //   return AlgorithmSpecialText('S', ':', textStyle?.copyWith(color: Colors.blue, fontSize: 18.0));
+    // } else if(isStart(flag, 'M')) {
+    //   return AlgorithmSpecialText('M', ':', textStyle?.copyWith(color: Colors.blue, fontSize: 18.0));
+    // } else if(isStart(flag, 'P')) {
+    //   return AlgorithmSpecialText('P', ':', textStyle?.copyWith(color: Colors.blue, fontSize: 18.0));
+    // } else if(isStart(flag, 'L')) {
+    //   return AlgorithmSpecialText('L', ':', textStyle?.copyWith(color: Colors.blue, fontSize: 18.0));
+    // } else if(isStart(flag, 'J')) {
+    //   return AlgorithmSpecialText('J', ':', textStyle?.copyWith(color: Colors.blue, fontSize: 18.0));
+    // }
     return null;
   }
 

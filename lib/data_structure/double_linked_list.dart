@@ -3,6 +3,8 @@
 import 'package:common_utils/common_utils.dart';
 import 'package:meta/meta.dart';
 
+import 'hero_node2.dart';
+
 class DoubleLinkedList {
   //先初始化一個頭節點,頭節點不要動,不存放具體數據
   HeroNode2 head = HeroNode2(no:0, name: "", nickname: "");
@@ -128,25 +130,6 @@ class DoubleLinkedList {
     }else {
       LogUtil.e("doubleLinkedList delete:沒有找到編號$no 的節點,不能刪\n");
     }
-  }
-
-}
-
-class HeroNode2 {
-  //構造函數
-  int no;
-  String name;
-  String nickname;
-  HeroNode2 next; //指向下一個節點, 默認為null
-  HeroNode2 prev; //指向前一個節點, 默認為null
-
-  //構造函數
-  HeroNode2({@required this.no, @required this.name, @required this.nickname});
-
-  //重寫toString
-  @override
-  String toString() {
-    return "HeroNode[no=${no}name=${name}nickname=$nickname]\n";
   }
 
 }

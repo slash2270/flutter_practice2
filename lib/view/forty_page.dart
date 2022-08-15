@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice2/demo/confetti_demo.dart';
 import 'package:flutter_practice2/demo/data_structure_demo.dart';
+import 'package:flutter_practice2/demo/search_demo.dart';
 
-import '../demo/algorithm_demo.dart';
+import '../algorithm/sort_demo.dart';
 import '../util/constants.dart';
 import '../util/function_util.dart';
 
@@ -31,6 +32,7 @@ class FortyPageState extends State<FortyPage> {
     const sliverConfetti = ConfettiDemo();
     const sliverAlgorithm = AlgorithmDemo();
     const sliverDataStructure = DataStructureDemo();
+    const silverSearch = SearchDemo();
 
     return Scaffold(
       appBar: AppBar(
@@ -52,6 +54,7 @@ class FortyPageState extends State<FortyPage> {
             sliverConfetti,
             sliverAlgorithm,
             sliverDataStructure,
+            silverSearch,
           ])
         )]
       ),
