@@ -116,14 +116,21 @@ class FunctionUtil{
 
   ElevatedButton initElevatedButton(BuildContext context, String buttonName, Widget targetClass){
     return ElevatedButton(
-      child: initText2(buttonName, Colors.white, Colors.transparent, 20),
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (BuildContext context) {
-            return targetClass;
-          }),
-        );
-      }
+        child: initText2(buttonName, Colors.white, Colors.transparent, 20),
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (BuildContext context) {
+              return targetClass;
+            }),
+          );
+        }
+    );
+  }
+
+  ElevatedButton initElevatedButton1(BuildContext context, String buttonName, Function function){
+    return ElevatedButton(
+        child: initText2(buttonName, Colors.white, Colors.transparent, 20),
+        onPressed: () => function
     );
   }
 

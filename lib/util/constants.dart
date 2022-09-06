@@ -45,7 +45,10 @@ class Constants{
   static const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
   static const defaultColor = Color(0xFF34568B);
 
+  static const apiTypeJson = 'application/json';
   static const lineId = '1';
+  static const lineChannelId = '1';
+  static const lineChannelSecret = '6';
   static const facebookID = '7';
   static const facebookAppID = '7';
   static const facebookSecret = '6';
@@ -64,6 +67,10 @@ class Constants{
   static const twitchStreamRtmp1 = 'rtmp://live-hel.twitch.tv/app/';
   static const twitchStreamRtmp2 = 'rtmp://live-tpe01.twitch.tv/app/';
   static const twitchChannelName = 't';
+  static const githubUserName = 's';
+  static const githubApi = 'https://api.github.com/users/$githubUserName';
+  static const githubId = '8';
+  static const githubToken = 'g';
 
   static List<Color> listColors = [
     Colors.blue.shade900, Colors.blue.shade800, Colors.blue.shade700, Colors.blue.shade600, Colors.blue.shade500, Colors.blue.shade400, Colors.blue.shade300, Colors.blue.shade200, Colors.blue.shade100
@@ -80,7 +87,7 @@ class Constants{
   static const List<String> listArguments = [
     'First', 'Second', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'
   ];
-  
+
   /// 這是 PicasaWeb URL，可能會發生變化。 理想情況下，PicasaWeb API 應該是
   /// 用於獲取 URL。
   /// 感謝 Romain Guy 的照片：

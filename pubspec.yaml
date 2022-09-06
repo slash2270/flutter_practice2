@@ -17,6 +17,10 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
+arb-dir：lib/l10ntemplate-arb-file：app_en:
+  arboutput-localization-file：app_localizations:
+    dart:
+
 environment:
   sdk: ">=2.12.0 <3.0.0" #null safety >= 2.12.0
 
@@ -185,7 +189,7 @@ dependencies:
   #file_picker: ^4.6.1 #選擇檔案
   #shared_preferences: ^2.0.15
   #flutter_local_notifications: ^9.7.0
-  livekit_client: ^1.1.0 #直播
+  #livekit_client: ^1.1.0 #直播
   flutter_background: ^1.1.0
   logging: ^1.0.2
   shared_preferences: ^2.0.15
@@ -203,7 +207,45 @@ dependencies:
   #package_info: '>=0.4.0 <2.0.0'
   filesize: ^2.0.1 #文件大小
   flutter_keyboard_visibility: ^5.2.0 #鍵盤bug
-
+  connectivity_plus: ^2.3.6+1 #連線
+  mobile_scanner: ^2.0.0 #在Android上使用CameraX，在iOS上使用AVFoundation
+  android_intent_plus: ^3.1.1+1 #當平臺是Android時，此外掛允許Flutter應用程式啟動任意意圖。如果在iOS上呼叫外掛，它將使您的應用程式崩潰。在檢查模式下，我們斷言該平臺應該是Android。
+  battery_plus: ^2.1.4+1 #用於訪問有關應用程式正在執行的裝置電池的各種資訊。
+  sensors_plus: ^1.3.4+1 #用於訪問加速度計、陀螺儀和磁強計感測器。
+  flutter_offline: ^2.1.0 #離線/線上連線的整潔實用程式。
+  gbk2utf8: ^1.0.1 #中文gbk的解析。
+  markdown: ^5.0.0 #客戶端和伺服器上將Markdown解析為HTML。
+  #flutter_dialogflow: ^0.1.3
+  slimy_card: ^1.0.4 #卡片一分為二。
+  vercoder_inputer: ^0.9.0 #验证码输入框控件。
+  flutter_picker: ^2.0.5 #選擇器。
+  localization: ^2.1.0 #簡化應用程式內翻譯的軟體包。
+  flutter_credit_card: ^3.0.3 #信用卡。
+  slide_to_act: ^2.0.1 #滑動解鎖元件。
+  account_selector: ^1.0.1 #帳戶選擇器。
+  left_scroll_actions: ^2.1.2 #微信左滑
+  flip_box_bar_plus: ^1.0.0 #3D BottomNavigationBar
+  modal_bottom_sheet: ^2.1.0 #改良版Bottom Sheet
+  rate_my_app: ^1.1.3 #評價app
+  flutter_login: ^4.0.0 #登入/註冊UI
+  #flutter_draw: ^1.1.0 #小畫家
+  flutter_rating_bar: ^4.0.1 #星星評價
+  #flutter_beautiful_popup: ^1.7.0 #美化popup
+  flutter_highlight: ^0.7.0 #語法熒光筆
+  synchronized: ^3.0.0+3 #同步
+  #asuka: ^2.0.1 #明日香視窗
+  unorm_dart: ^0.2.0 #Unicode 8.0規範化-NFC，NFD，NFKC，NFKD
+  motion: ^1.3.3 #陀螺儀效果
+  graphql: ^5.0.0 #超圖
+  switcher: ^1.0.0 #優化切換器
+  pinput: ^2.2.12 #簡訊驗證
+  #sms_autofill: ^2.2.0 #簡訊程式自動填充支援。
+  flutter_villains: ^1.2.1 #惡棍動畫
+  video_trimmer: ^1.1.3 #影片剪輯
+  file_picker: ^4.5.1 #允許您使用本機檔案資源管理器選擇單個或多個檔案，並支援擴充套件過濾。
+  flutter_full_pdf_viewer: ^1.0.6 #pdf檢視器
+  flutter_secure_storage: ^6.0.0 #安全儲存
+  vertical_tabs: ^0.2.0 #垂直標籤
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -215,6 +257,9 @@ dependencies:
     #  libraries:
      #   - package:flutter_practice2/widget/deferredbox.Dart
 dev_dependencies:
+  flutter_localizations:
+    sdk: flutter
+  # The following section is specific to Flutter.
   dartdoc: ^6.0.1
   flame_lint: ^0.1.1
   mockito: ^5.3.0
@@ -254,6 +299,7 @@ flutter:
     - assets/images/process_timeline/
     - assets/data/
     - audio/
+    - lib/i18n/
 
   fonts:
     - family: Montserrat
@@ -271,7 +317,76 @@ flutter:
       fonts:
         - asset: fonts/Raleway-Regular.ttf
         - asset: fonts/Raleway-Bold.ttf
-
+    - family: OpenSans
+      fonts:
+            - asset: assets/fonts/OpenSans-Light.ttf
+              weight: 300
+            - asset: assets/fonts/OpenSans-LightItalic.ttf
+              weight: 300
+              style: italic
+            - asset: assets/fonts/OpenSans-Regular.ttf
+            - asset: assets/fonts/OpenSans-Italic.ttf
+              style: italic
+            - asset: assets/fonts/OpenSans-SemiBold.ttf
+              weight: 600
+            - asset: assets/fonts/OpenSans-SemiBoldItalic.ttf
+              weight: 600
+              style: italic
+            - asset: assets/fonts/OpenSans-Bold.ttf
+              weight: 700
+            - asset: assets/fonts/OpenSans-BoldItalic.ttf
+              weight: 700
+              style: italic
+            - asset: assets/fonts/OpenSans-ExtraBold.ttf
+              weight: 800
+            - asset: assets/fonts/OpenSans-ExtraBoldItalic.ttf
+              weight: 800
+              style: italic
+    - family: SourceSansPro
+      fonts:
+          - asset: assets/fonts/SourceSansPro-ExtraLight.ttf
+            weight: 200
+          - asset: assets/fonts/SourceSansPro-ExtraLightItalic.ttf
+            weight: 200
+          - asset: assets/fonts/SourceSansPro-Light.ttf
+            weight: 300
+          - asset: assets/fonts/SourceSansPro-LightItalic.ttf
+            weight: 300
+            style: italic
+          - asset: assets/fonts/SourceSansPro-Regular.ttf
+          - asset: assets/fonts/SourceSansPro-Italic.ttf
+            style: italic
+          - asset: assets/fonts/SourceSansPro-SemiBold.ttf
+            weight: 600
+          - asset: assets/fonts/SourceSansPro-SemiBoldItalic.ttf
+            weight: 600
+            style: italic
+          - asset: assets/fonts/SourceSansPro-Bold.ttf
+            weight: 700
+          - asset: assets/fonts/SourceSansPro-BoldItalic.ttf
+            weight: 700
+            style: italic
+    - family: NotoSans
+      fonts:
+          - asset: assets/fonts/NotoSans-Regular.ttf
+          - asset: assets/fonts/NotoSans-Italic.ttf
+            style: italic
+          - asset: assets/fonts/NotoSans-Bold.ttf
+            weight: 700
+          - asset: assets/fonts/NotoSans-BoldItalic.ttf
+            weight: 700
+            style: italic
+    - family: Quicksand
+      fonts:
+          - asset: assets/fonts/Quicksand-Light.ttf
+            weight: 300
+          - asset: assets/fonts/Quicksand-Regular.ttf
+          - asset: assets/fonts/Quicksand-Medium.ttf
+            weight: 500
+          - asset: assets/fonts/Quicksand-SemiBold.ttf
+            weight: 600
+          - asset: assets/fonts/Quicksand-Bold.ttf
+            weight: 700
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

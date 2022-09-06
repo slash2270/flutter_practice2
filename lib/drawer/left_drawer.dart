@@ -2,6 +2,7 @@ import 'package:flustars/flustars.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice2/util/function_util.dart';
+import '../view/main_page.dart' as first;
 import 'package:flutter_practice2/view/second_page.dart' as second;
 import 'package:flutter_practice2/view/three_page.dart' as three;
 import 'package:flutter_practice2/view/four_page.dart' as four;
@@ -89,6 +90,7 @@ class _LeftDrawerState extends State<LeftDrawer> {
               ),
             ),
           ),
+          _setDrawerItem(context, '1', _functionUtil.setRotate(const first.MainPage())),
           _setDrawerItem(context, '2', _functionUtil.setScale(const second.SecondPage())),
           _setDrawerItem(context, '3', _functionUtil.setFade(const three.ThreePage())),
           _setDrawerItem(context, '4', _functionUtil.setSize(const four.FourPage())),
@@ -128,11 +130,11 @@ class _LeftDrawerState extends State<LeftDrawer> {
           _setDrawerItem(context, '38', _functionUtil.setScale(const thirtyeight.ThirtyEightPage())),
           _setDrawerItem(context, '39', _functionUtil.setFade(const thirtynine.ThirtyNinePage())),
           _setDrawerItem(context, '40', _functionUtil.setSize(const forty.FortyPage())),
-          _setDrawerItem(context, '41', _functionUtil.setSize(const fortyone.FortyOnePage())),
-          _setDrawerItem(context, '42', _functionUtil.setSize(const fortytwo.FortyTwoPage())),
-          _setDrawerItem(context, '43', _functionUtil.setSize(const fortythree.FortyThreePage())),
+          _setDrawerItem(context, '41', _functionUtil.setRotate(const fortyone.FortyOnePage())),
+          _setDrawerItem(context, '42', _functionUtil.setScale(const fortytwo.FortyTwoPage())),
+          _setDrawerItem(context, '43', _functionUtil.setFade(const fortythree.FortyThreePage())),
           _setDrawerItem(context, '44', _functionUtil.setSize(const fortyfour.FortyFourPage())),
-          _setDrawerItem(context, '45', _functionUtil.setSize(const fortyfive.FortyFivePage())),
+          _setDrawerItem(context, '45', _functionUtil.setRotate(const fortyfive.FortyFivePage())),
         ],
       ),
     );

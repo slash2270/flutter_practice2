@@ -164,26 +164,29 @@ class FortyTwoPageState extends State<FortyTwoPage> {
           ],
         )
     );
-    final sliverFacebook = SliverToBoxAdapter(
-        child: Column(
-          children: [
-            _functionUtil.initSizedBox(20.0),
-            _functionUtil.initText2('FacebookApi 串接Live', Constants.colorBlack, Constants.colorTransparent, 24),
-            _functionUtil.initSizedBox(16.0),
-            _functionUtil.initElevatedButton(context, 'Facebook Stream', ConnectPage(token: _facebookToken, url: _facebookUrl)),
-          ],
-        )
-    );
-    final sliverTwitch = SliverToBoxAdapter(
-        child: Column(
-          children: [
-            _functionUtil.initSizedBox(20.0),
-            _functionUtil.initText2('TwitchApi 串接Live', Constants.colorBlack, Constants.colorTransparent, 24),
-            _functionUtil.initSizedBox(16.0),
-            _functionUtil.initElevatedButton(context, 'Twitch Stream', ConnectPage(token: _twitchToken, url: _twitchUrl)),
-          ],
-        )
-    );
+
+    // final sliverFacebook = SliverToBoxAdapter(
+    //     child: Column(
+    //       children: [
+    //         _functionUtil.initSizedBox(20.0),
+    //         _functionUtil.initText2('FacebookApi 串接Live', Constants.colorBlack, Constants.colorTransparent, 24),
+    //         _functionUtil.initSizedBox(16.0),
+    //         _functionUtil.initElevatedButton(context, 'Facebook Stream', ConnectPage(token: _facebookToken, url: _facebookUrl)),
+    //       ],
+    //     )
+    // );
+    //
+    // final sliverTwitch = SliverToBoxAdapter(
+    //     child: Column(
+    //       children: [
+    //         _functionUtil.initSizedBox(20.0),
+    //         _functionUtil.initText2('TwitchApi 串接Live', Constants.colorBlack, Constants.colorTransparent, 24),
+    //         _functionUtil.initSizedBox(16.0),
+    //         _functionUtil.initElevatedButton(context, 'Twitch Stream', ConnectPage(token: _twitchToken, url: _twitchUrl)),
+    //       ],
+    //     )
+    // );
+
     final sliverApiVideo = SliverToBoxAdapter(
         child: Column(
           children: [
@@ -254,8 +257,8 @@ class FortyTwoPageState extends State<FortyTwoPage> {
         slivers: [
           sliverImageCompress,
           sliverVideoCompress,
-          sliverFacebook,
-          sliverTwitch,
+          // sliverFacebook,
+          // sliverTwitch,
           sliverApiVideo,
           sliverVideoStream,
           sliverCatch,

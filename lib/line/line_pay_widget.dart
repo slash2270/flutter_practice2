@@ -6,6 +6,7 @@ import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice2/line/line_pay_on_bean.dart';
 import 'package:flutter_practice2/line/line_pay_under_bean.dart';
+import 'package:flutter_practice2/util/constants.dart';
 import 'package:flutter_practice2/util/function_util.dart';
 import 'package:http/http.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -49,9 +50,9 @@ class _LinePayWidgetState extends State<LinePayWidget> {
     int id = Random().nextInt(99999999);
     var uri = Uri.parse('https://sandbox-api-pay.line.me/v2/payments/request');
     final header = {
-      "Content-Type": "application/json",
-      "X-LINE-ChannelId": "1",
-      "X-LINE-ChannelSecret": "6"
+      "Content-Type": Constants.apiTypeJson,
+      "X-LINE-ChannelId": Constants.lineChannelId,
+      "X-LINE-ChannelSecret": Constants.lineChannelSecret
     };
     final body = {
       "productName" : "測試產品1",
@@ -139,7 +140,8 @@ class _LinePayWidgetState extends State<LinePayWidget> {
         children: [
           ElevatedButton(
             onPressed: () => _underLineResponse,
-            child: _functionUtil.initText2('UnderLinePay', Colors.black, Colors.transparent, 20),),
+            child: _functionUtil.initText2('UnderLinePay', Colors.black, Colors.transparent, 20),
+          ),
           _functionUtil.initText2(_underResponse, Colors.black, Colors.transparent, 18),
         ],
       ),
@@ -151,9 +153,9 @@ class _LinePayWidgetState extends State<LinePayWidget> {
     int qrCode = Random().nextInt(999999999999999999);
     var uri = Uri.parse('https://sandbox-api-pay.line.me/v2/payments/oneTimeKeys/pay');
     final header = {
-      "Content-Type": "application/json",
-      "X-LINE-ChannelId": "1",
-      "X-LINE-ChannelSecret": "6"
+      "Content-Type": Constants.apiTypeJson,
+      "X-LINE-ChannelId": Constants.lineChannelId,
+      "X-LINE-ChannelSecret": Constants.lineChannelSecret
     };
     final body = {
       "productName" : "測試產品1",
