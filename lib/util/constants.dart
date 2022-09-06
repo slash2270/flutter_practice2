@@ -45,7 +45,10 @@ class Constants{
   static const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
   static const defaultColor = Color(0xFF34568B);
 
+  static const apiTypeJson = 'application/json';
   static const lineId = '1';
+  static const lineChannelId = '1';
+  static const lineChannelSecret = '6';
   static const facebookID = '7';
   static const facebookAppID = '7';
   static const facebookSecret = '6';

@@ -124,7 +124,7 @@ class _MyAppState extends State<MyApp> {
         builder: (context, value, child) => OKToast(
             child: MaterialApp(
               title: 'Flutter Demo',
-              home: const MainPage(),
+              home: const SecondPage(),
               theme: ThemeData(
                 primarySwatch: Colors.blue,
                 primaryColor: Colors.blue,

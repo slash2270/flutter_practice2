@@ -17,6 +17,10 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
+arb-dir：lib/l10ntemplate-arb-file：app_en:
+  arboutput-localization-file：app_localizations:
+    dart:
+
 environment:
   sdk: ">=2.12.0 <3.0.0" #null safety >= 2.12.0
 
@@ -203,8 +207,23 @@ dependencies:
   #package_info: '>=0.4.0 <2.0.0'
   filesize: ^2.0.1 #文件大小
   flutter_keyboard_visibility: ^5.2.0 #鍵盤bug
-
-
+  connectivity_plus: ^2.3.6+1 #連線
+  mobile_scanner: ^2.0.0 #在Android上使用CameraX，在iOS上使用AVFoundation
+  android_intent_plus: ^3.1.1+1 #當平臺是Android時，此外掛允許Flutter應用程式啟動任意意圖。如果在iOS上呼叫外掛，它將使您的應用程式崩潰。在檢查模式下，我們斷言該平臺應該是Android。
+  battery_plus: ^2.1.4+1 #用於訪問有關應用程式正在執行的裝置電池的各種資訊。
+  sensors_plus: ^1.3.4+1 #用於訪問加速度計、陀螺儀和磁強計感測器。
+  flutter_offline: ^2.1.0 #離線/線上連線的整潔實用程式。
+  gbk2utf8: ^1.0.1 #中文gbk的解析。
+  markdown: ^5.0.0 #客戶端和伺服器上將Markdown解析為HTML。
+  #flutter_dialogflow: ^0.1.3
+  slimy_card: ^1.0.4 #卡片一分為二。
+  vercoder_inputer: ^0.9.0 #验证码输入框控件。
+  flutter_picker: ^2.0.5 #選擇器。
+  localization: ^2.1.0 #簡化應用程式內翻譯的軟體包。
+  flutter_credit_card: ^3.0.3 #信用卡。
+  slide_to_act: ^2.0.1 #滑動解鎖元件。
+  account_selector: ^1.0.1 #帳戶選擇器。
+  left_scroll_actions: ^2.1.2 #微信左滑
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icRons.
@@ -215,6 +234,9 @@ dependencies:
     #  libraries:
      #   - package:flutter_practice2/widget/deferredbox.Dart
 dev_dependencies:
+  flutter_localizations:
+    sdk: flutter
+  # The following section is specific to Flutter.
   dartdoc: ^6.0.1
   flame_lint: ^0.1.1
   mockito: ^5.3.0
@@ -254,6 +276,7 @@ flutter:
     - assets/images/process_timeline/
     - assets/data/
     - audio/
+    - lib/i18n/
 
   fonts:
     - family: Montserrat

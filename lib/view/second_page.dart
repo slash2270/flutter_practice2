@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice2/demo/draganddrop_demo.dart';
 import 'package:flutter_practice2/util/function_util.dart';
 
+import '../drawer/left_drawer.dart';
+
 class SecondPage extends StatefulWidget {
   const SecondPage({Key? key}) : super(key: key);
 
@@ -60,13 +62,34 @@ class SecondPageState extends State<SecondPage> {
     double width = ScreenUtil.getInstance().screenWidth;
     double height = ScreenUtil.getInstance().screenHeight;
     LogUtil.e("SecondPage statusBar: $statusBar, width: $width, height: $height");
-
-    return Scaffold(
-      appBar: AppBar(
-        title: _functionUtil.initText("Second Page"),
-        centerTitle: true,
+    return Material(
+      child: Scaffold(
+        appBar: AppBar(
+          title: _functionUtil.initText("Second Page"),
+          centerTitle: true,
+          leading: Builder(builder: (BuildContext ctx) {
+            return IconButton(
+                color: Colors.white,
+                icon: const Icon(Icons.density_medium),
+                onPressed: () {
+                  setState(() { });
+                  Scaffold.of(ctx).openDrawer();
+                });
+          }),
+        ),
+        body: Stack(
+          children: [
+            const DragAndDropDemo(),//Click ? _ListView() : const MapWidget(),*/
+            WillPopScope(
+                onWillPop: () async {
+                  return true;
+                },
+                child: Container())
+          ],
+        ),
+        resizeToAvoidBottomInset: false,
+        drawer: const LeftDrawer(),
       ),
-      body: const DragAndDropDemo()
     );
   }
 }
