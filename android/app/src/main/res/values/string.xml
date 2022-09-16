@@ -10,6 +10,6 @@
     <string name="flutter_downloader_notification_complete">Download complete</string>
     <string name="flutter_downloader_notification_paused">Download paused</string>
     <string name="facebook_app_id">7</string>
-    <string name="fb_login_protocol_scheme">f</string>
+    <string name="fb_login_protocol_scheme">fb</string>
     <string name="facebook_client_token">3</string>
 </resources>
